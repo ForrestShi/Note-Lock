@@ -1,0 +1,31 @@
+//
+// Prefix header for all source files of the 'MySecNote' target in the 'MySecNote' project
+//
+
+#import <Availability.h>
+#import "UIColor+Colours.h"
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
+
+#define ISPAD ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
+#define kShowLoginView @"ShowLoginView"
+
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+#define UIColorFromRGBA(r,g,b,a) ([UIColor colorWithRed:r green:g blue:b alpha:a])
+
+#ifdef DEBUG
+#    define DLog(...) NSLog(__VA_ARGS__)
+#else
+#    define DLog(...) /* */
+#endif
+#define ALog(...) NSLog(__VA_ARGS__)
