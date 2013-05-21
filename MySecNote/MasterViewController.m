@@ -51,7 +51,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];   
-    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
@@ -68,7 +68,8 @@
 
     
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.tableView.separatorColor = [UIColor clearColor];
+    self.tableView.separatorColor = [UIColor blueNoteColor];
+    self.view.backgroundColor = [UIColor darkBlueNoteColor];
 
     self.searchResults = [NSMutableArray arrayWithCapacity:[[self.fetchedResultsController fetchedObjects] count]];
     [self.tableView reloadData];
@@ -180,10 +181,15 @@
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
-        [cell.textLabel setFont:[UIFont fontWithName:@"Noteworthy-Bold" size:17]];
-        cell.detailTextLabel.textColor = [UIColor lightTextColor];
-        cell.textLabel.textColor = [UIColor darkTextColor];
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:26]];
+        //cell.detailTextLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.contentView.backgroundColor = [UIColor blueNoteColor];
+        cell.backgroundColor = [UIColor blueNoteColor];
+        cell.textLabel.backgroundColor = [UIColor clearColor];
     }
     
     [self configureCell:cell atIndexPath:indexPath forSearchTableView:(tableView == self.searchDisplayController.searchResultsTableView)];

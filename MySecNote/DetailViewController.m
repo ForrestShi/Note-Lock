@@ -11,7 +11,7 @@
 
 @interface DetailViewController ()<UITextViewDelegate>
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (weak, nonatomic)  NoteView *noteTextView;
+@property (weak, nonatomic)  UITextView *noteTextView;
 
 - (void)configureView;
 @end
@@ -30,10 +30,10 @@
 - (id)init{
     self = [super init];
     if (self) {
-        NoteView *v = [[NoteView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 44.)];
+        UITextView *v = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 44.)];
         self.noteTextView = v;
         self.noteTextView.backgroundColor = [UIColor whiteColor];
-        //[self.noteTextView setFont:[UIFont fontWithName:@"Noteworthy-Bold" size:18]];
+        [self.noteTextView setFont:[UIFont fontWithName:@"Helvetica-Light" size:20]];
         self.noteTextView.delegate = self;
         self.noteTextView.alpha = 0.;
         [self.view addSubview:self.noteTextView];
@@ -60,12 +60,7 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     DLog(@"%s",__PRETTY_FUNCTION__);
-    //    [UIView animateWithDuration:.3 animations:^{
-    //        self.noteTextView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2.2);
-    //    }];
-    
     self.navigationItem.rightBarButtonItem.enabled = YES;
-    
 }
 
 - (BOOL)isEmptyNote{
@@ -86,6 +81,7 @@
 - (void)hideKeyboard{
     [self.noteTextView endEditing:YES];
     self.navigationItem.rightBarButtonItem.enabled = NO;
+    //[[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardWillHideNotification object:nil];
 }
 
 #pragma mark - Managing the detail item

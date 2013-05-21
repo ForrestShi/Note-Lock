@@ -325,6 +325,13 @@
 + (UIColor *)blueNoteColor{
     return [UIColor colorWithRed:40/255. green:120/255. blue:160/255. alpha:1.];
 }
++ (UIColor *)darkBlueNoteColor{
+    return [UIColor colorWithRed:80/255. green:160/255. blue:180/255. alpha:1.];
+}
++ (UIColor *)lightBlueNoteColor{
+    return [UIColor colorWithRed:40/255. green:100/255. blue:130/255. alpha:1.];
+}
+
 
 #pragma mark - Greens
 

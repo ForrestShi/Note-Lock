@@ -18,6 +18,7 @@
 #import "UIBarButtonItem+FlatUI.h"
 //#import "UIColor+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
+#import "UIColor+Colours.h"
 
 @implementation AppDelegate
 
