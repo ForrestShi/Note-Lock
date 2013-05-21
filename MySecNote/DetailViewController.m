@@ -7,10 +7,11 @@
 //
 
 #import "DetailViewController.h"
+#import "NoteView.h"
 
 @interface DetailViewController ()<UITextViewDelegate>
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (weak, nonatomic)  UITextView *noteTextView;
+@property (weak, nonatomic)  NoteView *noteTextView;
 
 - (void)configureView;
 @end
@@ -29,10 +30,15 @@
 - (id)init{
     self = [super init];
     if (self) {
-        UITextView *v= [[UITextView alloc] initWithFrame:CGRectZero];
+        NoteView *v = [[NoteView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 44.)];
         self.noteTextView = v;
+        self.noteTextView.backgroundColor = [UIColor whiteColor];
+        //[self.noteTextView setFont:[UIFont fontWithName:@"Noteworthy-Bold" size:18]];
         self.noteTextView.delegate = self;
+        self.noteTextView.alpha = 0.;
         [self.view addSubview:self.noteTextView];
+        
+        self.view.backgroundColor = [UIColor whiteColor];
 
     }
     return self;
@@ -110,22 +116,25 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.noteTextView.alpha = 1.;
+    }];
     [self.noteTextView becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.noteTextView endEditing:YES];
+    //[self.noteTextView endEditing:YES];
     self.navigationItem.rightBarButtonItem.enabled = NO;
     [self.noteTextView resignFirstResponder];
+    self.noteTextView.alpha = 0.;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.noteTextView.frame = self.view.bounds;
-    self.noteTextView.backgroundColor = [UIColor whiteColor];
-    [self.noteTextView setFont:[UIFont fontWithName:@"Noteworthy-Bold" size:18]];
+        
+
 
     [self configureView];
     

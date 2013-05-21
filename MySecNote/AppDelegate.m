@@ -5,6 +5,7 @@
 //  Created by forrest on 13-4-21.
 //  Copyright (c) 2013年 DFA. All rights reserved.
 //
+#import <QuartzCore/QuartzCore.h>
 
 #import "AppDelegate.h"
 
@@ -14,7 +15,9 @@
 #import "GCPINViewController.h"
 #import "AppSetting.h"
 #import "Flurry.h"
-#import <QuartzCore/QuartzCore.h>
+#import "UIBarButtonItem+FlatUI.h"
+//#import "UIColor+FlatUI.h"
+#import "UINavigationBar+FlatUI.h"
 
 @implementation AppDelegate
 
@@ -24,13 +27,11 @@
 
 
 - (void)showLoginViewWithPassword{
-    NSString *xibName = (IS_IPHONE_5?@"GCPINViewController568":@"GCPINViewController");
+    NSString *xibName = (IS_IPHONE_5?@"GCPINViewController568":@"GCPINViewController480");
     GCPINViewController *PIN = [[GCPINViewController alloc]
                                 initWithNibName:xibName
                                 bundle:nil
                                 mode:GCPINViewControllerModeVerify];
-    
-
     
     PIN.messageText = @"Enter your password";;
 //    PIN.messageLabel.text =
@@ -62,7 +63,7 @@
 
     [UIDevice currentDevice].proximityMonitoringEnabled = NO;
     [self.window.rootViewController presentModalViewController:PIN animated:YES];
-    
+    //[PIN presentFromViewController:self.window.rootViewController animated:YES];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -88,6 +89,12 @@
     //[[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:40/255. green:120/255. blue:160/255. alpha:1.]];
     [[UINavigationBar appearance] setTintColor:[UIColor blueNoteColor]];
     [[UISearchBar appearance] setTintColor:[UIColor blueNoteColor]];
+    [UIBarButtonItem configureFlatButtonsWithColor:[UIColor blueNoteColor]
+                                  highlightedColor:[UIColor blueNoteColor]
+                                      cornerRadius:3];
+    
+    [self.navigationController.navigationBar configureFlatNavigationBarWithColor:[UIColor blueNoteColor]];
+    
     [UIDevice currentDevice].proximityMonitoringEnabled = YES;
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleProximityChangeNotification:) name:UIDeviceProximityStateDidChangeNotification object:nil];
     
@@ -165,7 +172,7 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
-    //[[NSNotificationCenter defaultCenter] postNotificationName:kShowLoginView object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kShowLoginView object:nil];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

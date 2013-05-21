@@ -16,7 +16,7 @@
     self = [super initWithFrame:frame];
     if (self) {
 		[self setBackgroundColor:[UIColor whiteColor]];
-        self.font = [UIFont fontWithName:@"TimesNewRomanPS-BoldMT" size:12];
+        self.font = [UIFont fontWithName:@"TimesNewRomanPS-BoldMT" size:18];
         self.delegate = self;
     }
     return self;
@@ -39,7 +39,7 @@
     NSUInteger numberOfLines = (self.contentSize.height + self.bounds.size.height) / self.font.leading;
 	
     //Set the line offset from the baseline. (I'm sure there's a concrete way to calculate this.)
-    CGFloat baselineOffset = 6.0f;
+    CGFloat baselineOffset = 12.0f;
 	
     //iterate over numberOfLines and draw each line
     for (NSUInteger x = 1; x < numberOfLines; x++) {
@@ -56,7 +56,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-  [self setNeedsDisplay];
+  //[self setNeedsDisplay];
 }
 
 @end
