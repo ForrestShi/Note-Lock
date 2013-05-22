@@ -183,7 +183,7 @@
         }
         [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:26]];
         //cell.detailTextLabel.textColor = [UIColor whiteColor];
-        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.textColor = [UIColor darkTextColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell setAccessoryType:UITableViewCellAccessoryNone];
         cell.textLabel.textAlignment = UITextAlignmentCenter;
