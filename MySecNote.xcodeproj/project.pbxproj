@@ -46,7 +46,7 @@
 		18CBF6E9174BA6AA00BB6010 /* PINBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CBF6E2174BA6AA00BB6010 /* PINBox@2x.png */; };
 		18CBF6EC174BA75400BB6010 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CBF6EB174BA75400BB6010 /* NoteView.m */; };
 		18CBF6F6174BB3DE00BB6010 /* GCPINViewController568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CBF6F5174BB3DE00BB6010 /* GCPINViewController568.xib */; };
-		18CBF6F8174BB99000BB6010 /* GCPINViewController480.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CBF6F7174BB99000BB6010 /* GCPINViewController480.xib */; };
+		18CBF6F8174BB99000BB6010 /* GCPINViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CBF6F7174BB99000BB6010 /* GCPINViewController.xib */; };
 		43DF02D639EC49A58769CA8B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4724248045A24E3AA671C40E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -102,7 +102,7 @@
 		18CBF6EA174BA75400BB6010 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
 		18CBF6EB174BA75400BB6010 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		18CBF6F5174BB3DE00BB6010 /* GCPINViewController568.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCPINViewController568.xib; sourceTree = "<group>"; };
-		18CBF6F7174BB99000BB6010 /* GCPINViewController480.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCPINViewController480.xib; sourceTree = "<group>"; };
+		18CBF6F7174BB99000BB6010 /* GCPINViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCPINViewController.xib; sourceTree = "<group>"; };
 		4724248045A24E3AA671C40E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49AD580CECD445DBE4CEABE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -232,7 +232,7 @@
 		18CBF6D9174BA6AA00BB6010 /* pinview */ = {
 			isa = PBXGroup;
 			children = (
-				18CBF6F7174BB99000BB6010 /* GCPINViewController480.xib */,
+				18CBF6F7174BB99000BB6010 /* GCPINViewController.xib */,
 				18CBF6DA174BA6AA00BB6010 /* GCPINViewController.h */,
 				18CBF6DB174BA6AA00BB6010 /* GCPINViewController.m */,
 				18CBF6F5174BB3DE00BB6010 /* GCPINViewController568.xib */,
@@ -318,7 +318,7 @@
 				18CBF6E8174BA6AA00BB6010 /* PINBox.png in Resources */,
 				18CBF6E9174BA6AA00BB6010 /* PINBox@2x.png in Resources */,
 				18CBF6F6174BB3DE00BB6010 /* GCPINViewController568.xib in Resources */,
-				18CBF6F8174BB99000BB6010 /* GCPINViewController480.xib in Resources */,
+				18CBF6F8174BB99000BB6010 /* GCPINViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
