@@ -62,14 +62,14 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@" < " style:UIBarButtonItemStylePlain target:nil action:nil];
-        
-    [[self navigationItem] setBackBarButtonItem:backButton];
+//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@" < " style:UIBarButtonItemStylePlain target:nil action:nil];
+//        
+//    [[self navigationItem] setBackBarButtonItem:backButton];
 
     
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.tableView.separatorColor = [UIColor blueNoteColor];
-    self.view.backgroundColor = [UIColor darkBlueNoteColor];
+    self.tableView.separatorColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 
     self.searchResults = [NSMutableArray arrayWithCapacity:[[self.fetchedResultsController fetchedObjects] count]];
     [self.tableView reloadData];
