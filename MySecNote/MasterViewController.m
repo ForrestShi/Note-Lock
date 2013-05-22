@@ -396,25 +396,6 @@
     [self.tableView endUpdates];
 }
 
-/*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
- */
-
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.row%2== 0) {
-//        cell.backgroundColor = [UIColor lightGrayColor];
-//        tableView.separatorColor  = [UIColor clearColor];
-//    }else{
-//        cell.backgroundColor = [UIColor grayColor];
-//        tableView.separatorColor  = [UIColor clearColor];
-//    }    
-//}
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath forSearchTableView:(BOOL)isSearchedView
 {
@@ -430,7 +411,7 @@
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setTimeZone:[NSTimeZone localTimeZone]];
     [df setDateFormat:@"M/d/yyyy hh:mm a"];
-    cell.detailTextLabel.text =  [df stringFromDate:[object valueForKey:@"timeStamp"]];//[[object valueForKey:@"timeStamp"] description];
+    //cell.detailTextLabel.text =  [df stringFromDate:[object valueForKey:@"timeStamp"]];//[[object valueForKey:@"timeStamp"] description];
     cell.detailTextLabel.textColor = [UIColor darkGrayColor];
     cell.detailTextLabel.textAlignment = UITextAlignmentRight;
 
@@ -440,10 +421,10 @@
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"title"] description];
     
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setTimeZone:[NSTimeZone localTimeZone]];
-    [df setDateFormat:@"M/d/yyyy hh:mm a"];
-    cell.detailTextLabel.text =  [df stringFromDate:[object valueForKey:@"timeStamp"]];//[[object valueForKey:@"timeStamp"] description];
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    [df setTimeZone:[NSTimeZone localTimeZone]];
+//    [df setDateFormat:@"M/d/yyyy hh:mm a"];
+    //cell.detailTextLabel.text =  [df stringFromDate:[object valueForKey:@"timeStamp"]];//[[object valueForKey:@"timeStamp"] description];
     
 }
 

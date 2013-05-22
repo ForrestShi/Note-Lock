@@ -47,6 +47,15 @@
         UISwipeGestureRecognizer *swip2 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swip:)];
         swip2.direction = UISwipeGestureRecognizerDirectionRight;
         [self.view addGestureRecognizer:swip2];
+        
+        UISwipeGestureRecognizer *swip3 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swip:)];
+        swip3.direction = UISwipeGestureRecognizerDirectionUp;
+        [self.view addGestureRecognizer:swip3];
+        
+        UISwipeGestureRecognizer *swip4 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swip:)];
+        swip4.direction = UISwipeGestureRecognizerDirectionDown;
+        [self.view addGestureRecognizer:swip4];
+
 
     }
     return self;
