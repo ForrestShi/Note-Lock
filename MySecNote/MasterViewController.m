@@ -187,8 +187,8 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell setAccessoryType:UITableViewCellAccessoryNone];
         cell.textLabel.textAlignment = UITextAlignmentCenter;
-        cell.contentView.backgroundColor = [UIColor blueNoteColor];
-        cell.backgroundColor = [UIColor blueNoteColor];
+        cell.contentView.backgroundColor = [UIColor clearColor];
+        cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.backgroundColor = [UIColor clearColor];
     }
     
