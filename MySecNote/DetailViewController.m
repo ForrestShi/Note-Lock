@@ -39,9 +39,20 @@
         [self.view addSubview:self.noteTextView];
         
         self.view.backgroundColor = [UIColor whiteColor];
+        
+        UISwipeGestureRecognizer *swip1 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swip:)];
+        swip1.direction = UISwipeGestureRecognizerDirectionLeft;
+        [self.view addGestureRecognizer:swip1];
+        
+        UISwipeGestureRecognizer *swip2 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swip:)];
+        swip2.direction = UISwipeGestureRecognizerDirectionRight;
+        [self.view addGestureRecognizer:swip2];
 
     }
     return self;
+}
+- (void)swip:(UISwipeGestureRecognizer*)gesture{
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - UITextViewDelegate
