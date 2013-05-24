@@ -10,7 +10,7 @@
 #import "QBFlatButton.h"
 
 
-@interface SettingViewController (){
+@interface SettingViewController ()<MFMailComposeViewControllerDelegate>{
     QBFlatButton *schemeBtn;
     QBFlatButton *rateBtn;
     QBFlatButton *emailBtn;
@@ -108,9 +108,14 @@
         [mvc setSubject:@"Note + Lock 1.0"];
         [mvc setToRecipients:@[@"design4app@gmail.com"]];
         [mvc setMessageBody:@"What do you think this app ?" isHTML:NO];
-        
+        mvc.mailComposeDelegate = self;
         [self presentModalViewController:mvc animated:YES];
     }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [controller dismissModalViewControllerAnimated:YES];
+
 }
 
 - (void)rateUs{}

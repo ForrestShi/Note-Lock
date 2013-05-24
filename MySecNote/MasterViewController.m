@@ -138,14 +138,12 @@
         //
         if (!openSettingView) {
             [self.parentViewController.view addSubview:settingVC.view];
-
-            [self.navigationController setNavigationBarHidden:YES animated:YES];
-            settingVC.view.frame = self.view.frame;
+            settingVC.view.frame = [UIScreen mainScreen].applicationFrame;
             //settingVC.view.alpha = 1.;
             
         }else{
             settingVC.view.frame = self.navigationController.navigationBar.frame;
-            //settingVC.view.alpha = 0;
+            //settingVC.view.alpha = 0;        
             [settingVC viewWillDisappear:YES];
         }
         
@@ -154,12 +152,11 @@
         //
         
         if (!openSettingView) {
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
             [settingVC viewWillAppear:YES];
         }else{
-            [settingVC.view removeFromSuperview];
             [self.navigationController setNavigationBarHidden:NO animated:YES];
-            
-
+            [settingVC.view removeFromSuperview];
         }
         openSettingView = !openSettingView;
 
