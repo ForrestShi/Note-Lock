@@ -30,6 +30,7 @@
 		180ED00D17237CCF006276DF /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180ED00B17237CCF006276DF /* DetailViewController_iPad.xib */; };
 		180ED02317237DFD006276DF /* AppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 180ED02217237DFD006276DF /* AppSetting.m */; };
 		180ED0251723B64C006276DF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180ED0241723B64C006276DF /* AudioToolbox.framework */; };
+		182C5758174FA65800214883 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C5757174FA65800214883 /* SettingViewController.m */; };
 		182F81DC174A51E0006E2E36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182F81DB174A51E0006E2E36 /* QuartzCore.framework */; };
 		182F81E5174A707E006E2E36 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182F81E4174A707E006E2E36 /* Default@2x.png */; };
 		182F81E8174A7142006E2E36 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 182F81E6174A7142006E2E36 /* Default.png */; };
@@ -81,6 +82,8 @@
 		180ED02117237DFC006276DF /* AppSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSetting.h; sourceTree = "<group>"; };
 		180ED02217237DFD006276DF /* AppSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSetting.m; sourceTree = "<group>"; };
 		180ED0241723B64C006276DF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		182C5756174FA65800214883 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		182C5757174FA65800214883 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		182F81DB174A51E0006E2E36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		182F81E4174A707E006E2E36 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		182F81E6174A7142006E2E36 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 		180ECFE717237CCF006276DF /* MySecNote */ = {
 			isa = PBXGroup;
 			children = (
+				182C5756174FA65800214883 /* SettingViewController.h */,
+				182C5757174FA65800214883 /* SettingViewController.m */,
 				18CBF6EA174BA75400BB6010 /* NoteView.h */,
 				18CBF6EB174BA75400BB6010 /* NoteView.m */,
 				183687B5173F6BE5001978AF /* xib */,
@@ -370,6 +375,7 @@
 				18CBF6E3174BA6AA00BB6010 /* GCPINViewController.m in Sources */,
 				18CBF6E7174BA6AA00BB6010 /* GradientView.m in Sources */,
 				18CBF6EC174BA75400BB6010 /* NoteView.m in Sources */,
+				182C5758174FA65800214883 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
