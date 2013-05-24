@@ -55,6 +55,8 @@
         UISwipeGestureRecognizer *swip4 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swip:)];
         swip4.direction = UISwipeGestureRecognizerDirectionDown;
         [self.view addGestureRecognizer:swip4];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observePinView) name:kShowLoginView object:nil];
 
 
     }
@@ -66,6 +68,11 @@
 //        
 //    }];
     
+}
+
+- (void)observePinView{
+    DLog(@"detected");
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - UITextViewDelegate
