@@ -28,6 +28,7 @@
 
 
 - (void)showLoginViewWithPassword{
+    DLog(@"Show PIN View");
     NSString *xibName = (IS_IPHONE_5?@"GCPINViewController568":@"GCPINViewController480");
     GCPINViewController *PIN = [[GCPINViewController alloc]
                                 initWithNibName:xibName

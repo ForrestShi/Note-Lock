@@ -136,6 +136,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.noteTextView becomeFirstResponder];
+    self.noteTextView.alpha = 1.;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
