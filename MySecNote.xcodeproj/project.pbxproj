@@ -31,6 +31,8 @@
 		180ED02317237DFD006276DF /* AppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 180ED02217237DFD006276DF /* AppSetting.m */; };
 		180ED0251723B64C006276DF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180ED0241723B64C006276DF /* AudioToolbox.framework */; };
 		182C5758174FA65800214883 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C5757174FA65800214883 /* SettingViewController.m */; };
+		182C575C174FAC7A00214883 /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C575B174FAC7A00214883 /* QBFlatButton.m */; };
+		182C579E174FC70100214883 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182C579D174FC70100214883 /* MessageUI.framework */; };
 		182F81DC174A51E0006E2E36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182F81DB174A51E0006E2E36 /* QuartzCore.framework */; };
 		182F81E5174A707E006E2E36 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182F81E4174A707E006E2E36 /* Default@2x.png */; };
 		182F81E8174A7142006E2E36 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 182F81E6174A7142006E2E36 /* Default.png */; };
@@ -84,6 +86,9 @@
 		180ED0241723B64C006276DF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		182C5756174FA65800214883 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		182C5757174FA65800214883 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		182C575A174FAC7A00214883 /* QBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBFlatButton.h; sourceTree = "<group>"; };
+		182C575B174FAC7A00214883 /* QBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBFlatButton.m; sourceTree = "<group>"; };
+		182C579D174FC70100214883 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		182F81DB174A51E0006E2E36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		182F81E4174A707E006E2E36 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		182F81E6174A7142006E2E36 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -115,12 +120,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180ECFE217237CCF006276DF /* Foundation.framework in Frameworks */,
+				182C579E174FC70100214883 /* MessageUI.framework in Frameworks */,
 				182F81DC174A51E0006E2E36 /* QuartzCore.framework in Frameworks */,
 				18C54AB11748C722008BF33D /* SystemConfiguration.framework in Frameworks */,
 				18C54AAF1748C6A5008BF33D /* CFNetwork.framework in Frameworks */,
 				180ED0251723B64C006276DF /* AudioToolbox.framework in Frameworks */,
 				180ECFE017237CCF006276DF /* UIKit.framework in Frameworks */,
-				180ECFE217237CCF006276DF /* Foundation.framework in Frameworks */,
 				180ECFE417237CCF006276DF /* CoreGraphics.framework in Frameworks */,
 				180ECFE617237CCF006276DF /* CoreData.framework in Frameworks */,
 				18CBF6D7174BA69800BB6010 /* libFlurry.a in Frameworks */,
@@ -134,6 +140,7 @@
 		180ECFD017237CCE006276DF = {
 			isa = PBXGroup;
 			children = (
+				182C579D174FC70100214883 /* MessageUI.framework */,
 				18CBF6D9174BA6AA00BB6010 /* pinview */,
 				18CBF6D2174BA69800BB6010 /* Common */,
 				182F81E6174A7142006E2E36 /* Default.png */,
@@ -226,6 +233,8 @@
 		18CBF6D2174BA69800BB6010 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				182C575A174FAC7A00214883 /* QBFlatButton.h */,
+				182C575B174FAC7A00214883 /* QBFlatButton.m */,
 				18CBF6D3174BA69800BB6010 /* Flurry.h */,
 				18CBF6D4174BA69800BB6010 /* libFlurry.a */,
 				18CBF6D5174BA69800BB6010 /* UIColor+Colours.h */,
@@ -376,6 +385,7 @@
 				18CBF6E7174BA6AA00BB6010 /* GradientView.m in Sources */,
 				18CBF6EC174BA75400BB6010 /* NoteView.m in Sources */,
 				182C5758174FA65800214883 /* SettingViewController.m in Sources */,
+				182C575C174FAC7A00214883 /* QBFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

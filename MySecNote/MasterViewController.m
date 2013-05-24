@@ -146,15 +146,19 @@
         }else{
             settingVC.view.frame = self.navigationController.navigationBar.frame;
             //settingVC.view.alpha = 0;
+            [settingVC viewWillDisappear:YES];
         }
         
         
     } completion:^(BOOL finished) {
         //
         
-        if (openSettingView) {
+        if (!openSettingView) {
+            [settingVC viewWillAppear:YES];
+        }else{
             [settingVC.view removeFromSuperview];
             [self.navigationController setNavigationBarHidden:NO animated:YES];
+            
 
         }
         openSettingView = !openSettingView;
