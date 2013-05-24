@@ -50,7 +50,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];   
+    [super viewWillAppear:animated];
+    //self.navigationController.navigationBar.frame = CGRectMake(0., self.view.frame.size.height, self.view.frame.size.width, 44.);
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     [self.tableView reloadData];
 }
 

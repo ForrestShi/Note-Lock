@@ -62,6 +62,10 @@
 }
 - (void)swip:(UISwipeGestureRecognizer*)gesture{
     [self dismissModalViewControllerAnimated:YES];
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        
+//    }];
+    
 }
 
 #pragma mark - UITextViewDelegate
@@ -123,53 +127,44 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    
     if (self.detailItem) {
-        
         self.noteTextView.text = [self.detailItem valueForKey:@"content"];
     }
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [UIView animateWithDuration:0.3 animations:^{
-        self.noteTextView.alpha = 1.;
-    }];
     [self.noteTextView becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     //[self.noteTextView endEditing:YES];
-    self.navigationItem.rightBarButtonItem.enabled = NO;
+//    self.navigationItem.rightBarButtonItem.enabled = NO;
     [self.noteTextView resignFirstResponder];
-    self.noteTextView.alpha = 0.;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
-
-
     [self configureView];
-    
-    UIBarButtonItem *keyBoardButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(hideKeyboard)];
-    self.navigationItem.rightBarButtonItem = keyBoardButton;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
+//    UIBarButtonItem *keyBoardButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(hideKeyboard)];
+//    self.navigationItem.rightBarButtonItem = keyBoardButton;
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWasShown:)
+//                                                 name:UIKeyboardDidShowNotification
+//                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWillHide:)
+//                                                 name:UIKeyboardWillHideNotification
+//                                               object:nil];
     
 }
 
 - (void)viewDidUnload{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    //[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)keyboardWasShown:(NSNotification *)notification

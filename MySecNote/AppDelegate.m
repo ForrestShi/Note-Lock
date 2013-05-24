@@ -89,6 +89,7 @@
 
     //[[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:40/255. green:120/255. blue:160/255. alpha:1.]];
     [[UINavigationBar appearance] setTintColor:[UIColor blueNoteColor]];
+    //[[UINavigationBar appearance] setFrame:CGRectMake(0., self.window.frame.size.height - 44., self.window.frame.size.width, 44.)];
     [[UISearchBar appearance] setTintColor:[UIColor blueNoteColor]];
     [UIBarButtonItem configureFlatButtonsWithColor:[UIColor blueNoteColor]
                                   highlightedColor:[UIColor blueNoteColor]
@@ -155,6 +156,7 @@
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     
     [self saveContext];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kShowLoginView object:nil];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -168,13 +170,14 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kShowLoginView object:nil];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:kShowLoginView object:nil];
 
 }
 
