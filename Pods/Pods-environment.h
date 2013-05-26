@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_FlatUIKit 0
 #define COCOAPODS_VERSION_PATCH_FlatUIKit 0
 
+// KKPasscodeLock
+#define COCOAPODS_POD_AVAILABLE_KKPasscodeLock
+#define COCOAPODS_VERSION_MAJOR_KKPasscodeLock 0
+#define COCOAPODS_VERSION_MINOR_KKPasscodeLock 1
+#define COCOAPODS_VERSION_PATCH_KKPasscodeLock 5
+
 // libffi
 #define COCOAPODS_POD_AVAILABLE_libffi
 #define COCOAPODS_VERSION_MAJOR_libffi 3

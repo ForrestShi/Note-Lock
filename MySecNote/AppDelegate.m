@@ -17,6 +17,7 @@
 #import "Flurry.h"
 #import "SchemeManager.h"
 #import "Appirater.h"
+#import "KKPasscodeLock.h"
 
 @implementation AppDelegate
 
@@ -27,7 +28,7 @@
 
 - (void)showLoginViewWithPassword{
     DLog(@"Show PIN View");
-    NSString *xibName = (IS_IPHONE_5?@"GCPINViewController568":@"GCPINViewController480");
+    NSString *xibName = (IS_IPHONE_5?@"GCPINViewController568":@"GCPINViewController");
     GCPINViewController *PIN = [[GCPINViewController alloc]
                                 initWithNibName:xibName
                                 bundle:nil
