@@ -12,6 +12,7 @@
 #import "AppSetting.h"
 #import "GCPINViewController.h"
 #import "SettingViewController.h"
+#import "Flurry.h"
 
 
 @interface MasterViewController ()<UIGestureRecognizerDelegate , UISearchBarDelegate , UISearchDisplayDelegate >{
@@ -157,6 +158,8 @@
 
 - (void)insertNewObject:(id)sender
 {
+    [Flurry logEvent:@"new note"];
+    
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];

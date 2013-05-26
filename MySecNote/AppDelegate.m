@@ -16,6 +16,7 @@
 #import "AppSetting.h"
 #import "Flurry.h"
 #import "SchemeManager.h"
+#import "Appirater.h"
 
 @implementation AppDelegate
 
@@ -67,7 +68,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+    [Appirater setAppId:@"H5S2Z56PC9"];
     [Flurry startSession:@"37539QN6ZFGBM7N8XNB3"];
     application.statusBarHidden = YES;
     application.applicationSupportsShakeToEdit = YES;
@@ -91,6 +92,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
 
     [[SchemeManager sharedInstance] setupSchemeWithColor:nil];
+    
+    [Appirater appLaunched:YES];
+    
     return YES;
 }
 
@@ -157,6 +161,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [Appirater appEnteredForeground:YES];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kShowLoginView object:nil];
 }

@@ -32,6 +32,7 @@
 		180ED0251723B64C006276DF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180ED0241723B64C006276DF /* AudioToolbox.framework */; };
 		182801D717506C060093F416 /* SchemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182801D617506C060093F416 /* SchemeViewController.m */; };
 		182801DB1751CD5A0093F416 /* SchemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 182801DA1751CD5A0093F416 /* SchemeManager.m */; };
+		182802151751D7E70093F416 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182802141751D7E70093F416 /* StoreKit.framework */; };
 		182C5758174FA65800214883 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C5757174FA65800214883 /* SettingViewController.m */; };
 		182C575C174FAC7A00214883 /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C575B174FAC7A00214883 /* QBFlatButton.m */; };
 		182C579E174FC70100214883 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182C579D174FC70100214883 /* MessageUI.framework */; };
@@ -64,7 +65,7 @@
 		180ACC9117240C43003DC8BF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		180ACC9217240C43003DC8BF /* Icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon512.png; sourceTree = "<group>"; };
 		180ACC9317240C43003DC8BF /* Ion-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ion-Small@2x.png"; sourceTree = "<group>"; };
-		180ECFDB17237CCF006276DF /* Note + Lock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Note + Lock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		180ECFDB17237CCF006276DF /* Passwords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Passwords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		180ECFDF17237CCF006276DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		180ECFE117237CCF006276DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		180ECFE317237CCF006276DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +91,7 @@
 		182801D617506C060093F416 /* SchemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchemeViewController.m; sourceTree = "<group>"; };
 		182801D91751CD5A0093F416 /* SchemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchemeManager.h; sourceTree = "<group>"; };
 		182801DA1751CD5A0093F416 /* SchemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchemeManager.m; sourceTree = "<group>"; };
+		182802141751D7E70093F416 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		182C5756174FA65800214883 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		182C5757174FA65800214883 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		182C575A174FAC7A00214883 /* QBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBFlatButton.h; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182802151751D7E70093F416 /* StoreKit.framework in Frameworks */,
 				180ECFE217237CCF006276DF /* Foundation.framework in Frameworks */,
 				182C579E174FC70100214883 /* MessageUI.framework in Frameworks */,
 				182F81DC174A51E0006E2E36 /* QuartzCore.framework in Frameworks */,
@@ -146,7 +149,6 @@
 		180ECFD017237CCE006276DF = {
 			isa = PBXGroup;
 			children = (
-				182C579D174FC70100214883 /* MessageUI.framework */,
 				18CBF6D9174BA6AA00BB6010 /* pinview */,
 				18CBF6D2174BA69800BB6010 /* Common */,
 				182F81E6174A7142006E2E36 /* Default.png */,
@@ -164,7 +166,7 @@
 		180ECFDC17237CCF006276DF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				180ECFDB17237CCF006276DF /* Note + Lock.app */,
+				180ECFDB17237CCF006276DF /* Passwords.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +174,8 @@
 		180ECFDE17237CCF006276DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				182802141751D7E70093F416 /* StoreKit.framework */,
+				182C579D174FC70100214883 /* MessageUI.framework */,
 				182F81DB174A51E0006E2E36 /* QuartzCore.framework */,
 				18C54AB01748C722008BF33D /* SystemConfiguration.framework */,
 				18C54AAE1748C6A5008BF33D /* CFNetwork.framework */,
@@ -272,9 +276,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		180ECFDA17237CCE006276DF /* Note + Lock */ = {
+		180ECFDA17237CCE006276DF /* Passwords */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 180ED01017237CCF006276DF /* Build configuration list for PBXNativeTarget "Note + Lock" */;
+			buildConfigurationList = 180ED01017237CCF006276DF /* Build configuration list for PBXNativeTarget "Passwords" */;
 			buildPhases = (
 				15888EB90E194B578220BCE9 /* Check Pods Manifest.lock */,
 				180ECFD717237CCE006276DF /* Sources */,
@@ -286,9 +290,9 @@
 			);
 			dependencies = (
 			);
-			name = "Note + Lock";
+			name = Passwords;
 			productName = MySecNote;
-			productReference = 180ECFDB17237CCF006276DF /* Note + Lock.app */;
+			productReference = 180ECFDB17237CCF006276DF /* Passwords.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -312,7 +316,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				180ECFDA17237CCE006276DF /* Note + Lock */,
+				180ECFDA17237CCE006276DF /* Passwords */,
 			);
 		};
 /* End PBXProject section */
@@ -481,7 +485,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MySecNote/MySecNote-Prefix.pch";
 				INFOPLIST_FILE = "MySecNote/MySecNote-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -556,7 +560,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MySecNote/MySecNote-Prefix.pch";
 				INFOPLIST_FILE = "MySecNote/MySecNote-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -579,7 +583,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MySecNote/MySecNote-Prefix.pch";
 				INFOPLIST_FILE = "MySecNote/MySecNote-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -606,7 +610,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		180ED01017237CCF006276DF /* Build configuration list for PBXNativeTarget "Note + Lock" */ = {
+		180ED01017237CCF006276DF /* Build configuration list for PBXNativeTarget "Passwords" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				180ED01117237CCF006276DF /* Debug */,

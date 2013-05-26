@@ -9,6 +9,8 @@
 #import "SettingViewController.h"
 #import "QBFlatButton.h"
 #import "SchemeViewController.h"
+#import "Appirater.h"
+#import "Flurry.h"
 
 @interface SettingViewController ()<MFMailComposeViewControllerDelegate>{
     QBFlatButton *schemeBtn;
@@ -149,13 +151,17 @@
         mvc.mailComposeDelegate = self;
         [self presentModalViewController:mvc animated:YES];
     }
+    [Flurry logEvent:@"click email button"];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     [controller dismissModalViewControllerAnimated:YES];
 }
 
-- (void)rateUs{}
+- (void)rateUs{
+    [Appirater rateApp];
+    [Flurry logEvent:@"click rate button"];
+}
 
 - (void)moreSchemes{
     SchemeViewController *svc = [[SchemeViewController alloc] init];
