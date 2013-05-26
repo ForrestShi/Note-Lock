@@ -8,7 +8,7 @@
 
 #import "SettingViewController.h"
 #import "QBFlatButton.h"
-
+#import "SchemeViewController.h"
 
 @interface SettingViewController ()<MFMailComposeViewControllerDelegate>{
     QBFlatButton *schemeBtn;
@@ -100,7 +100,43 @@
     copyrightLabel.textColor = [UIColor whiteColor];
     copyrightLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14];
     [self.view addSubview:copyrightLabel];
+    
+    UITapGestureRecognizer *tapSetting = [[UITapGestureRecognizer alloc] initWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+        //
+        [self tapMe];
+    }];
+    [self.view addGestureRecognizer:tapSetting];
+
+    UISwipeGestureRecognizer *swip = [[UISwipeGestureRecognizer alloc] initWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+        //
+        [self tapMe];
+    }];
+    swip.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight |UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionUp;
+    
+    UISwipeGestureRecognizer *swip2 = [[UISwipeGestureRecognizer alloc] initWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+        //
+        [self tapMe];
+    }];
+    swip2.direction = UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionUp;
+    
+    [self.view addGestureRecognizer:swip];
+    [self.view addGestureRecognizer:swip2];
+    
 }
+
+
+- (void)tapMe{
+    
+    [UIView animateWithDuration:.5 delay:.3 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        //[self.navigationController setNavigationBarHidden:NO animated:YES];
+        self.view.frame = CGRectMake(0, 0, 320., 44.);
+        //self.view.alpha = 0.;
+    } completion:^(BOOL finished) {
+        [self.view removeFromSuperview];
+    }];
+    
+}
+
 
 - (void)emailToUs{
     if ([MFMailComposeViewController canSendMail]) {
@@ -120,7 +156,13 @@
 
 - (void)rateUs{}
 
-- (void)moreSchemes{}
+- (void)moreSchemes{
+    SchemeViewController *svc = [[SchemeViewController alloc] init];
+    svc.view.frame = CGRectInset(self.view.frame, 10., 16.);
+    //svc.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:svc.view];
+    
+}
 
 
 

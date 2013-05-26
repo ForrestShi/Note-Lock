@@ -30,6 +30,7 @@
 		180ED00D17237CCF006276DF /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180ED00B17237CCF006276DF /* DetailViewController_iPad.xib */; };
 		180ED02317237DFD006276DF /* AppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 180ED02217237DFD006276DF /* AppSetting.m */; };
 		180ED0251723B64C006276DF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180ED0241723B64C006276DF /* AudioToolbox.framework */; };
+		182801D717506C060093F416 /* SchemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182801D617506C060093F416 /* SchemeViewController.m */; };
 		182C5758174FA65800214883 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C5757174FA65800214883 /* SettingViewController.m */; };
 		182C575C174FAC7A00214883 /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C575B174FAC7A00214883 /* QBFlatButton.m */; };
 		182C579E174FC70100214883 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182C579D174FC70100214883 /* MessageUI.framework */; };
@@ -84,6 +85,8 @@
 		180ED02117237DFC006276DF /* AppSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSetting.h; sourceTree = "<group>"; };
 		180ED02217237DFD006276DF /* AppSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSetting.m; sourceTree = "<group>"; };
 		180ED0241723B64C006276DF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		182801D517506C060093F416 /* SchemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchemeViewController.h; sourceTree = "<group>"; };
+		182801D617506C060093F416 /* SchemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchemeViewController.m; sourceTree = "<group>"; };
 		182C5756174FA65800214883 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		182C5757174FA65800214883 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		182C575A174FAC7A00214883 /* QBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBFlatButton.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 		180ECFE717237CCF006276DF /* MySecNote */ = {
 			isa = PBXGroup;
 			children = (
+				182801D517506C060093F416 /* SchemeViewController.h */,
+				182801D617506C060093F416 /* SchemeViewController.m */,
 				182C5756174FA65800214883 /* SettingViewController.h */,
 				182C5757174FA65800214883 /* SettingViewController.m */,
 				18CBF6EA174BA75400BB6010 /* NoteView.h */,
@@ -386,6 +391,7 @@
 				18CBF6EC174BA75400BB6010 /* NoteView.m in Sources */,
 				182C5758174FA65800214883 /* SettingViewController.m in Sources */,
 				182C575C174FAC7A00214883 /* QBFlatButton.m in Sources */,
+				182801D717506C060093F416 /* SchemeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

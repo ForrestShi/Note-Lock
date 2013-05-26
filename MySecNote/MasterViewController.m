@@ -17,7 +17,6 @@
 @interface MasterViewController ()<UIGestureRecognizerDelegate , UISearchBarDelegate , UISearchDisplayDelegate >{
     UIImageView *lockImageView ;
     SettingViewController *settingVC;
-    BOOL    openSettingView;
 }
 
 @property (nonatomic,strong) NSMutableArray *searchResults;
@@ -67,7 +66,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    openSettingView = NO;
     
 //    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@" < " style:UIBarButtonItemStylePlain target:nil action:nil];
 //        
@@ -81,24 +79,19 @@
     self.searchResults = [NSMutableArray arrayWithCapacity:[[self.fetchedResultsController fetchedObjects] count]];
     [self.tableView reloadData];
     
-    if (!settingVC) {
-        settingVC = [[SettingViewController alloc] init];
-        settingVC.view.frame = self.navigationController.navigationBar.frame;
-        settingVC.view.backgroundColor = [UIColor blueNoteColor];
-        
-        UITapGestureRecognizer *tapSetting = [[UITapGestureRecognizer alloc] initWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
-            //
-            [self tapMe];
-        }];
-        [settingVC.view addGestureRecognizer:tapSetting];
-    }
-
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
         [self tapMe];
     }];
     [self.navigationController.navigationBar addGestureRecognizer:tap];
     
+    UISwipeGestureRecognizer *swip = [[UISwipeGestureRecognizer alloc] initWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
+        //
+        [self tapMe];
+    }];
+    swip.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight |UISwipeGestureRecognizerDirectionDown | UISwipeGestureRecognizerDirectionUp;
+    [self.navigationController.navigationBar addGestureRecognizer:swip];
+
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
@@ -134,31 +127,20 @@
 
 - (void)tapMe{
 
+    if (!settingVC) {
+        settingVC = [[SettingViewController alloc] init];
+        settingVC.view.frame = self.navigationController.navigationBar.frame;
+        settingVC.view.backgroundColor = [UIColor blueNoteColor];
+    }
+
+    
     [UIView animateWithDuration:.5 delay:.3 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        //
-        if (!openSettingView) {
-            [self.parentViewController.view addSubview:settingVC.view];
-            settingVC.view.frame = [UIScreen mainScreen].applicationFrame;
-            //settingVC.view.alpha = 1.;
-            
-        }else{
-            settingVC.view.frame = self.navigationController.navigationBar.frame;
-            //settingVC.view.alpha = 0;        
-            [settingVC viewWillDisappear:YES];
-        }
-        
-        
+        [self.parentViewController.view addSubview:settingVC.view];
+        [self.parentViewController.view bringSubviewToFront:settingVC.view];
+        settingVC.view.frame = [UIScreen mainScreen].applicationFrame;
     } completion:^(BOOL finished) {
         //
-        
-        if (!openSettingView) {
-            [self.navigationController setNavigationBarHidden:YES animated:YES];
-            [settingVC viewWillAppear:YES];
-        }else{
-            [self.navigationController setNavigationBarHidden:NO animated:YES];
-            [settingVC.view removeFromSuperview];
-        }
-        openSettingView = !openSettingView;
+        //[self.navigationController setNavigationBarHidden:YES animated:YES];
 
     }];
 
