@@ -66,9 +66,7 @@
 }
 - (void)swip:(UISwipeGestureRecognizer*)gesture{
     [self dismissViewControllerAnimated:YES completion:^{
-        
     }];
-    
 }
 
 - (void)observePinView{
@@ -93,30 +91,25 @@
     return YES;
 }
 
-- (void)textViewDidBeginEditing:(UITextView *)textView {
-    DLog(@"%s",__PRETTY_FUNCTION__);
-    self.navigationItem.rightBarButtonItem.enabled = YES;
-}
-
 - (BOOL)isEmptyNote{
     return (self.noteTextView.text.length == 0 );
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
-    DLog(@"%s",__PRETTY_FUNCTION__);
-
-    if (_detailItem && [self isEmptyNote]==NO ) {
+    if (_detailItem && [self isEmptyNote]== NO ) {
         [_detailItem setValue:textView.text forKey:@"content"];
         NSArray *stringArray = [textView.text componentsSeparatedByString:@"\n"];
         NSString *possibleTitle = [stringArray objectAtIndex:0];
         [_detailItem setValue:possibleTitle forKey:@"title"];
+    }else{
+        [_detailItem setValue:@"Empty" forKey:@"title"];
     }
 }
 
-- (void)hideKeyboard{
-    [self.noteTextView endEditing:YES];
-    self.navigationItem.rightBarButtonItem.enabled = NO;
-    //[[NSNotificationCenter defaultCenter] postNotificationName:UIKeyboardWillHideNotification object:nil];
+- (void)assignEmptyNoteTitle{
+    if (_detailItem && [self isEmptyNote] ) {
+        [_detailItem setValue:@"Empty" forKey:@"title"];
+    }
 }
 
 #pragma mark - Managing the detail item
@@ -156,43 +149,13 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [self.noteTextView resignFirstResponder];
+    [self assignEmptyNoteTitle];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureView];
-//    UIBarButtonItem *keyBoardButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(hideKeyboard)];
-//    self.navigationItem.rightBarButtonItem = keyBoardButton;
-//    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWasShown:)
-//                                                 name:UIKeyboardDidShowNotification
-//                                               object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(keyboardWillHide:)
-//                                                 name:UIKeyboardWillHideNotification
-//                                               object:nil];
-    
-}
-
-- (void)viewDidUnload{
-    //[[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)keyboardWasShown:(NSNotification *)notification
-{
-    DLog(@"%s",__PRETTY_FUNCTION__);
-    // Step 1: Get the size of the keyboard.
-    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    [UIView animateWithDuration:.3 animations:^{
-        self.noteTextView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - keyboardSize.height);
-    }];
-}
-- (void) keyboardWillHide:(NSNotification *)notification {
-    [UIView animateWithDuration:.3 animations:^{
-        self.noteTextView.frame = self.view.frame;
-    }];
+    [self configureView];    
 }
 - (void)didReceiveMemoryWarning
 {
