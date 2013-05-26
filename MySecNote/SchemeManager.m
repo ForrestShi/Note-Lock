@@ -30,7 +30,7 @@
     if (!color) {
         color = [[NSUserDefaults standardUserDefaults] objectForKey:@"color"];
         if (!color) {
-            color = [UIColor pinkColor];
+            color = [UIColor blueNoteColor];
         }
     }
     [[NSUserDefaults standardUserDefaults] setObject:color forKey:@"color"];
