@@ -15,10 +15,7 @@
 #import "GCPINViewController.h"
 #import "AppSetting.h"
 #import "Flurry.h"
-#import "UIBarButtonItem+FlatUI.h"
-//#import "UIColor+FlatUI.h"
-#import "UINavigationBar+FlatUI.h"
-#import "UIColor+Colours.h"
+#import "SchemeManager.h"
 
 @implementation AppDelegate
 
@@ -88,22 +85,12 @@
     } 
     [self.window makeKeyAndVisible];
 
-    //[[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:40/255. green:120/255. blue:160/255. alpha:1.]];
-    [[UINavigationBar appearance] setTintColor:[UIColor blueNoteColor]];
-    //[[UINavigationBar appearance] setFrame:CGRectMake(0., self.window.frame.size.height - 44., self.window.frame.size.width, 44.)];
-    [[UISearchBar appearance] setTintColor:[UIColor blueNoteColor]];
-    [UIBarButtonItem configureFlatButtonsWithColor:[UIColor blueNoteColor]
-                                  highlightedColor:[UIColor blueNoteColor]
-                                      cornerRadius:3];
-    
-    [self.navigationController.navigationBar configureFlatNavigationBarWithColor:[UIColor blueNoteColor]];
-    
     [UIDevice currentDevice].proximityMonitoringEnabled = YES;
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleProximityChangeNotification:) name:UIDeviceProximityStateDidChangeNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
 
-    
+    [[SchemeManager sharedInstance] setupSchemeWithColor:nil];
     return YES;
 }
 

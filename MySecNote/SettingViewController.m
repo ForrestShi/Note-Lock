@@ -44,6 +44,7 @@
     [btn2 setTitle:title forState:UIControlStateNormal];
     return btn2;
 }
+
 - (void)viewWillAppear:(BOOL)animated{
     DLog(@"1");
     [super viewWillAppear:animated];
@@ -84,7 +85,8 @@
     rateBtn = [self newFlatButtonWithTitle:@"ENCOURAGE US" andFrame:CGRectMake(offsetX, h*.2 + bH + gap, w - offsetX*2, bH)];
     emailBtn = [self newFlatButtonWithTitle:@"FEEDBACK" andFrame:CGRectMake(offsetX, h*.2 + bH*2 +gap*2, w - offsetX*2, bH)];
     
-    [self.view addSubview:schemeBtn];
+    //TODO: can not change tintcolor dynamically from the app right now 
+    //[self.view addSubview:schemeBtn];
     [self.view addSubview:rateBtn];
     [self.view addSubview:emailBtn];
     
@@ -128,7 +130,7 @@
 - (void)tapMe{
     
     [UIView animateWithDuration:.5 delay:.3 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        //[self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self viewWillDisappear:YES];
         self.view.frame = CGRectMake(0, 0, 320., 44.);
         //self.view.alpha = 0.;
     } completion:^(BOOL finished) {
@@ -151,17 +153,19 @@
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     [controller dismissModalViewControllerAnimated:YES];
-
 }
 
 - (void)rateUs{}
 
 - (void)moreSchemes{
     SchemeViewController *svc = [[SchemeViewController alloc] init];
-    svc.view.frame = CGRectInset(self.view.frame, 10., 16.);
-    //svc.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:svc.view];
-    
+    svc.view.frame = self.view.frame;//CGRectInset(self.view.frame, 10., 16.);
+    svc.view.backgroundColor = [UIColor whiteColor];
+    //[self.view addSubview:svc.view];
+    //[self presentModalViewController:svc animated:YES];
+    [self presentViewController:svc animated:YES completion:^{
+        //
+    }];
 }
 
 

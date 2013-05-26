@@ -140,8 +140,7 @@
         settingVC.view.frame = [UIScreen mainScreen].applicationFrame;
     } completion:^(BOOL finished) {
         //
-        //[self.navigationController setNavigationBarHidden:YES animated:YES];
-
+        [settingVC viewWillAppear:YES];
     }];
 
 }
