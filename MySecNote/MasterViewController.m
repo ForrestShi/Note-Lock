@@ -278,10 +278,12 @@
 	        self.detailViewController =  [[DetailViewController alloc] init];//[[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
 	    }
         self.detailViewController.detailItem = object;
-//        [self.navigationController pushViewController:self.detailViewController animated:YES];
-//        self.detailViewController.modalPresentationStyle = UIModalTransitionStyleCoverVertical;
         self.detailViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self.navigationController presentModalViewController:self.detailViewController animated:YES];
+        //[self.navigationController presentModalViewController:self.detailViewController animated:YES];
+        [self.navigationController presentViewController:self.detailViewController animated:YES completion:^{
+            //
+        }];
+        
     } else {
         self.detailViewController.detailItem = object;
     }

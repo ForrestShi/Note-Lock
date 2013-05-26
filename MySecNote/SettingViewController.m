@@ -149,13 +149,17 @@
         [mvc setToRecipients:@[@"design4app@gmail.com"]];
         [mvc setMessageBody:@"What do you think this app ?" isHTML:NO];
         mvc.mailComposeDelegate = self;
-        [self presentModalViewController:mvc animated:YES];
+        [self presentViewController:mvc animated:YES completion:^{
+            
+        }];
     }
     [Flurry logEvent:@"click email button"];
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-    [controller dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 - (void)rateUs{

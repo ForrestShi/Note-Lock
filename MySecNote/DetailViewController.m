@@ -8,10 +8,12 @@
 
 #import "DetailViewController.h"
 #import "NoteView.h"
+#import "GCPlaceholderTextView.h"
+
 
 @interface DetailViewController ()<UITextViewDelegate>
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (weak, nonatomic)  UITextView *noteTextView;
+@property (weak, nonatomic)  GCPlaceholderTextView *noteTextView;
 
 - (void)configureView;
 @end
@@ -30,7 +32,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        UITextView *v = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 44.)];
+        GCPlaceholderTextView *v = [[GCPlaceholderTextView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 44.)];
         self.noteTextView = v;
         self.noteTextView.backgroundColor = [UIColor whiteColor];
         [self.noteTextView setFont:[UIFont fontWithName:@"Helvetica-Light" size:20]];
@@ -63,16 +65,18 @@
     return self;
 }
 - (void)swip:(UISwipeGestureRecognizer*)gesture{
-    [self dismissModalViewControllerAnimated:YES];
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        
-//    }];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
     
 }
 
 - (void)observePinView{
     DLog(@"detected");
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+
 }
 
 #pragma mark - UITextViewDelegate
@@ -135,21 +139,22 @@
 {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.noteTextView.text = [self.detailItem valueForKey:@"content"];
+        NSString *noteText = [self.detailItem valueForKey:@"content"];
+        self.noteTextView.text = noteText;
+        if (noteText.length == 0 ) {
+            [self.noteTextView setPlaceholder:@"Title"];
+        }
     }
 
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.noteTextView becomeFirstResponder];
     self.noteTextView.alpha = 1.;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    //[self.noteTextView endEditing:YES];
-//    self.navigationItem.rightBarButtonItem.enabled = NO;
     [self.noteTextView resignFirstResponder];
 }
 

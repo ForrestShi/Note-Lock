@@ -53,6 +53,7 @@
 		18CBF6EC174BA75400BB6010 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CBF6EB174BA75400BB6010 /* NoteView.m */; };
 		18CBF6F6174BB3DE00BB6010 /* GCPINViewController568h.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CBF6F5174BB3DE00BB6010 /* GCPINViewController568h.xib */; };
 		18F517321751E07C0061B0A6 /* GCPINViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F517311751E07C0061B0A6 /* GCPINViewController.xib */; };
+		18F517361751E4C50061B0A6 /* GCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F517351751E4C50061B0A6 /* GCPlaceholderTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		43DF02D639EC49A58769CA8B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4724248045A24E3AA671C40E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,8 @@
 		18CBF6EB174BA75400BB6010 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		18CBF6F5174BB3DE00BB6010 /* GCPINViewController568h.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCPINViewController568h.xib; sourceTree = "<group>"; };
 		18F517311751E07C0061B0A6 /* GCPINViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GCPINViewController.xib; sourceTree = "<group>"; };
+		18F517341751E4C50061B0A6 /* GCPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCPlaceholderTextView.h; sourceTree = "<group>"; };
+		18F517351751E4C50061B0A6 /* GCPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPlaceholderTextView.m; sourceTree = "<group>"; };
 		4724248045A24E3AA671C40E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49AD580CECD445DBE4CEABE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -149,6 +152,7 @@
 		180ECFD017237CCE006276DF = {
 			isa = PBXGroup;
 			children = (
+				18F517331751E4C50061B0A6 /* GCPlaceholderTextView */,
 				18CBF6D9174BA6AA00BB6010 /* pinview */,
 				18CBF6D2174BA69800BB6010 /* Common */,
 				182F81E6174A7142006E2E36 /* Default.png */,
@@ -271,6 +275,15 @@
 				18CBF6E2174BA6AA00BB6010 /* PINBox@2x.png */,
 			);
 			path = pinview;
+			sourceTree = "<group>";
+		};
+		18F517331751E4C50061B0A6 /* GCPlaceholderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				18F517341751E4C50061B0A6 /* GCPlaceholderTextView.h */,
+				18F517351751E4C50061B0A6 /* GCPlaceholderTextView.m */,
+			);
+			path = GCPlaceholderTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +415,7 @@
 				182C575C174FAC7A00214883 /* QBFlatButton.m in Sources */,
 				182801D717506C060093F416 /* SchemeViewController.m in Sources */,
 				182801DB1751CD5A0093F416 /* SchemeManager.m in Sources */,
+				18F517361751E4C50061B0A6 /* GCPlaceholderTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
