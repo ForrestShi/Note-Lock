@@ -84,7 +84,7 @@
 
     float bH = 80.;
     schemeBtn = [self newFlatButtonWithTitle:@"SCHEME" andFrame:CGRectMake(offsetX, h*.2, w - offsetX*2, bH)];
-    rateBtn = [self newFlatButtonWithTitle:@"ENCOURAGE US" andFrame:CGRectMake(offsetX, h*.2 + bH + gap, w - offsetX*2, bH)];
+    rateBtn = [self newFlatButtonWithTitle:@"RATE" andFrame:CGRectMake(offsetX, h*.2 + bH + gap, w - offsetX*2, bH)];
     emailBtn = [self newFlatButtonWithTitle:@"FEEDBACK" andFrame:CGRectMake(offsetX, h*.2 + bH*2 +gap*2, w - offsetX*2, bH)];
     
     //TODO: can not change tintcolor dynamically from the app right now 
@@ -141,13 +141,18 @@
     
 }
 
-
 - (void)emailToUs{
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mvc = [[MFMailComposeViewController alloc] init];
-        [mvc setSubject:@"Note + Lock 1.0"];
+        //[mvc setSubject:[NSString stringWithFormat:@"@%@%",@"Passwords Pro",[[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)kCFBundleVersionKey ]] ];
+        CFStringRef ver = CFBundleGetValueForInfoDictionaryKey(
+                                                               CFBundleGetMainBundle(),
+                                                               kCFBundleVersionKey);
+        NSString *appVersion = (__bridge NSString *)ver;
+
+        [mvc setSubject:[NSString stringWithFormat:@"Passwords Pro %@", appVersion]];
         [mvc setToRecipients:@[@"design4app@gmail.com"]];
-        [mvc setMessageBody:@"What do you think this app ?" isHTML:NO];
+        [mvc setMessageBody:@" " isHTML:NO];
         mvc.mailComposeDelegate = self;
         [self presentViewController:mvc animated:YES completion:^{
             
