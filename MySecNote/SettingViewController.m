@@ -164,6 +164,7 @@
 
 - (void)rateUs{
     [Appirater rateApp];
+    //[Appirater userDidSignificantEvent:YES];
     [Flurry logEvent:@"click rate button"];
 }
 

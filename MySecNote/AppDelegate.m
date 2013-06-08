@@ -69,7 +69,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Appirater setAppId:@"H5S2Z56PC9"];
+    [Appirater setAppId:@"654443419"];
     [Flurry startSession:@"37539QN6ZFGBM7N8XNB3"];
     application.statusBarHidden = YES;
     application.applicationSupportsShakeToEdit = YES;
@@ -87,13 +87,11 @@
     } 
     [self.window makeKeyAndVisible];
 
-    [UIDevice currentDevice].proximityMonitoringEnabled = YES;
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleProximityChangeNotification:) name:UIDeviceProximityStateDidChangeNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
+  //  [UIDevice currentDevice].proximityMonitoringEnabled = YES;
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
 
     [[SchemeManager sharedInstance] setupSchemeWithColor:nil];
-    
+
     [Appirater appLaunched:YES];
     
     return YES;
@@ -136,18 +134,11 @@
     }
 }
 
-
-//-(void)handleProximityChangeNotification:(NSNotification*)nft{
-//    if([[UIDevice currentDevice]proximityState]){
-//        DLog(@"... %@" ,nft);
-//    }
-//}
-
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kShowLoginView object:nil];
     [self saveContext];
 }
 
@@ -155,7 +146,6 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    [[NSNotificationCenter defaultCenter] postNotificationName:kShowLoginView object:nil];
 
 }
 

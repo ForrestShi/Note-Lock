@@ -40,6 +40,7 @@
 		182F81E5174A707E006E2E36 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182F81E4174A707E006E2E36 /* Default@2x.png */; };
 		182F81E8174A7142006E2E36 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 182F81E6174A7142006E2E36 /* Default.png */; };
 		182F81E9174A7142006E2E36 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182F81E7174A7142006E2E36 /* Default-568h@2x.png */; };
+		183040B917635F4900F1E8AA /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 183040B817635F4900F1E8AA /* close.png */; };
 		18441FA417488670004B6EC0 /* MasterViewController_iPhone568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18441FA217488670004B6EC0 /* MasterViewController_iPhone568.xib */; };
 		18C54AAF1748C6A5008BF33D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C54AAE1748C6A5008BF33D /* CFNetwork.framework */; };
 		18C54AB11748C722008BF33D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C54AB01748C722008BF33D /* SystemConfiguration.framework */; };
@@ -102,6 +103,7 @@
 		182F81E4174A707E006E2E36 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		182F81E6174A7142006E2E36 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		182F81E7174A7142006E2E36 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		183040B817635F4900F1E8AA /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		18441FA317488670004B6EC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPhone568.xib; sourceTree = "<group>"; };
 		18C54AAE1748C6A5008BF33D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		18C54AB01748C722008BF33D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -222,6 +224,7 @@
 		180ECFE817237CCF006276DF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				183040B817635F4900F1E8AA /* close.png */,
 				180ACC8C17240C43003DC8BF /* Icon-72.png */,
 				180ACC8D17240C43003DC8BF /* Icon-72@2x.png */,
 				180ACC8E17240C43003DC8BF /* Icon-Small-50.png */,
@@ -360,6 +363,7 @@
 				18CBF6E9174BA6AA00BB6010 /* PINBox@2x.png in Resources */,
 				18CBF6F6174BB3DE00BB6010 /* GCPINViewController568h.xib in Resources */,
 				18F517321751E07C0061B0A6 /* GCPINViewController.xib in Resources */,
+				183040B917635F4900F1E8AA /* close.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

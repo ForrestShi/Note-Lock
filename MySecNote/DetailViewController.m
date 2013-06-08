@@ -36,6 +36,8 @@
         self.noteTextView = v;
         self.noteTextView.backgroundColor = [UIColor whiteColor];
         [self.noteTextView setFont:[UIFont fontWithName:@"Helvetica-Light" size:20]];
+        [self.noteTextView setTextColor:[UIColor skyeBlueColor]];
+        
         self.noteTextView.delegate = self;
         self.noteTextView.alpha = 0.;
         [self.view addSubview:self.noteTextView];
@@ -50,20 +52,33 @@
         swip2.direction = UISwipeGestureRecognizerDirectionRight;
         [self.view addGestureRecognizer:swip2];
         
-        UISwipeGestureRecognizer *swip3 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swip:)];
-        swip3.direction = UISwipeGestureRecognizerDirectionUp;
-        [self.view addGestureRecognizer:swip3];
-        
-        UISwipeGestureRecognizer *swip4 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swip:)];
-        swip4.direction = UISwipeGestureRecognizerDirectionDown;
-        [self.view addGestureRecognizer:swip4];
-        
+//        UISwipeGestureRecognizer *swip3 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swip:)];
+//        swip3.direction = UISwipeGestureRecognizerDirectionUp;
+//        [self.view addGestureRecognizer:swip3];
+//        
+//        UISwipeGestureRecognizer *swip4 = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swip:)];
+//        swip4.direction = UISwipeGestureRecognizerDirectionDown;
+//        [self.view addGestureRecognizer:swip4];
+//        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observePinView) name:kShowLoginView object:nil];
 
+        UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 32., 0., 32., 32.)];
+        closeBtn.backgroundColor = [UIColor skyeBlueColor];
+        [closeBtn setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal]; 
+        
+        [self.noteTextView addSubview:closeBtn];
+        [closeBtn addTarget:self action:@selector(closeCurrentView) forControlEvents:UIControlEventTouchUpInside];
+        
 
     }
     return self;
 }
+
+- (void)closeCurrentView{
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+}
+
 - (void)swip:(UISwipeGestureRecognizer*)gesture{
     [self dismissViewControllerAnimated:YES completion:^{
     }];

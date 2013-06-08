@@ -447,15 +447,10 @@
         object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     }
     
-    cell.textLabel.text = [[object valueForKey:@"title"] description];
-
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setTimeZone:[NSTimeZone localTimeZone]];
-    [df setDateFormat:@"M/d/yyyy hh:mm a"];
-    //cell.detailTextLabel.text =  [df stringFromDate:[object valueForKey:@"timeStamp"]];//[[object valueForKey:@"timeStamp"] description];
-    cell.detailTextLabel.textColor = [UIColor darkGrayColor];
-    cell.detailTextLabel.textAlignment = UITextAlignmentRight;
-
+    NSString *title = [[object valueForKey:@"title"] description];
+    cell.textLabel.text = [title uppercaseString];
+    cell.textLabel.textColor = [UIColor skyeBlueColor];
+    
 }
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
