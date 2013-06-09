@@ -11,9 +11,11 @@
 #import "SchemeViewController.h"
 #import "Appirater.h"
 #import "Flurry.h"
+#import "iTellAFriend.h"
 
 @interface SettingViewController ()<MFMailComposeViewControllerDelegate>{
-    QBFlatButton *schemeBtn;
+    QBFlatButton *recommendBtn;
+    QBFlatButton *giftBtn;
     QBFlatButton *rateBtn;
     QBFlatButton *emailBtn;
 }
@@ -51,9 +53,10 @@
     DLog(@"1");
     [super viewWillAppear:animated];
     [UIView animateWithDuration:.5 animations:^{
-        schemeBtn.alpha = 1.;
+        recommendBtn.alpha = 1.;
         emailBtn.alpha = 1.;
         rateBtn.alpha = 1.;
+        giftBtn.alpha = 1.;
     }];
 }
 
@@ -61,9 +64,10 @@
         DLog(@"2");
     [super viewWillDisappear:animated];
     [UIView animateWithDuration:.1 animations:^{
-        schemeBtn.alpha = 0.;
+        recommendBtn.alpha = 0.;
         emailBtn.alpha = 0.;
         rateBtn.alpha = 0.;
+        giftBtn.alpha = 0.;
     }];
 
 }
@@ -80,21 +84,24 @@
     float w = self.view.frame.size.width;
     float h = self.view.frame.size.height;
     float offsetX = 60.;
-    float gap = 22.;
+    float gap = 18.;
 
-    float bH = 80.;
-    schemeBtn = [self newFlatButtonWithTitle:@"SCHEME" andFrame:CGRectMake(offsetX, h*.2, w - offsetX*2, bH)];
-    rateBtn = [self newFlatButtonWithTitle:@"RATE" andFrame:CGRectMake(offsetX, h*.2 + bH + gap, w - offsetX*2, bH)];
-    emailBtn = [self newFlatButtonWithTitle:@"FEEDBACK" andFrame:CGRectMake(offsetX, h*.2 + bH*2 +gap*2, w - offsetX*2, bH)];
+    float bH = 60.;
+    recommendBtn = [self newFlatButtonWithTitle:@"RECOMMEND" andFrame:CGRectMake(offsetX, h*.2, w - offsetX*2, bH)];
+    giftBtn = [self newFlatButtonWithTitle:@"GIFT" andFrame:CGRectMake(offsetX, h*.2 + bH + gap, w - offsetX*2, bH)];
+    rateBtn = [self newFlatButtonWithTitle:@"RATE" andFrame:CGRectMake(offsetX, h*.2 + (bH + gap)*2, w - offsetX*2, bH)];
+    emailBtn = [self newFlatButtonWithTitle:@"FEEDBACK" andFrame:CGRectMake(offsetX, h*.2 + (bH +gap)*3, w - offsetX*2, bH)];
     
     //TODO: can not change tintcolor dynamically from the app right now 
-    //[self.view addSubview:schemeBtn];
+    [self.view addSubview:recommendBtn];
     [self.view addSubview:rateBtn];
+    [self.view addSubview:giftBtn];
     [self.view addSubview:emailBtn];
     
     [emailBtn addTarget:self action:@selector(emailToUs) forControlEvents:UIControlEventTouchUpInside];
+    [giftBtn addTarget:self action:@selector(gift) forControlEvents:UIControlEventTouchUpInside];
     [rateBtn addTarget:self action:@selector(rateUs) forControlEvents:UIControlEventTouchUpInside];
-    [schemeBtn addTarget:self action:@selector(moreSchemes) forControlEvents:UIControlEventTouchUpInside];
+    [recommendBtn addTarget:self action:@selector(recommend) forControlEvents:UIControlEventTouchUpInside];
 
     
     UILabel *copyrightLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, h - 44., w, 44.)];
@@ -141,6 +148,17 @@
     
 }
 
+- (void)gift{
+     [[iTellAFriend sharedInstance] giftThisAppWithAlertView:YES];    
+}
+
+- (void)recommend{
+    if ([[iTellAFriend sharedInstance] canTellAFriend]) {
+        UINavigationController* tellAFriendController = [[iTellAFriend sharedInstance] tellAFriendController];
+        [self presentModalViewController:tellAFriendController animated:YES];
+    }
+}
+
 - (void)emailToUs{
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mvc = [[MFMailComposeViewController alloc] init];
@@ -168,8 +186,8 @@
 }
 
 - (void)rateUs{
-    [Appirater rateApp];
-    //[Appirater userDidSignificantEvent:YES];
+    [[iTellAFriend sharedInstance] rateThisAppWithAlertView:YES];
+    //[Appirater rateApp];
     [Flurry logEvent:@"click rate button"];
 }
 

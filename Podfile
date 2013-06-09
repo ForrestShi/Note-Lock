@@ -3,3 +3,4 @@ pod 'FlatUIKit'
 pod "BlocksKit" 
 pod "Appirater"
 pod "KKPasscodeLock"
+pod "iTellAFriend"

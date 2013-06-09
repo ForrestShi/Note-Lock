@@ -63,7 +63,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(observePinView) name:kShowLoginView object:nil];
 
         UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 32., 0., 32., 32.)];
-        closeBtn.backgroundColor = [UIColor skyeBlueColor];
+        closeBtn.backgroundColor = [UIColor clearColor];
         [closeBtn setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal]; 
         
         [self.noteTextView addSubview:closeBtn];
@@ -115,6 +115,9 @@
         [_detailItem setValue:textView.text forKey:@"content"];
         NSArray *stringArray = [textView.text componentsSeparatedByString:@"\n"];
         NSString *possibleTitle = [stringArray objectAtIndex:0];
+        if (possibleTitle.length == 0 ) {
+            possibleTitle = @"Empty";
+        }
         [_detailItem setValue:possibleTitle forKey:@"title"];
     }else{
         [_detailItem setValue:@"Empty" forKey:@"title"];
@@ -150,7 +153,7 @@
         NSString *noteText = [self.detailItem valueForKey:@"content"];
         self.noteTextView.text = noteText;
         if (noteText.length == 0 ) {
-            [self.noteTextView setPlaceholder:@"Title"];
+            [self.noteTextView setPlaceholder:@"Title \nClick to edit "];
         }
     }
 

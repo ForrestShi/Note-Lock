@@ -68,10 +68,10 @@
 {
     [super viewDidLoad];
     
-//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@" < " style:UIBarButtonItemStylePlain target:nil action:nil];
-//        
-//    [[self navigationItem] setBackBarButtonItem:backButton];
-
+    UIBarButtonItem *infoBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction handler:^(id sender) {
+        [self tapMe];
+    }];
+    [[self navigationItem] setLeftBarButtonItem:infoBtn];
     
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.separatorColor = [UIColor clearColor];
@@ -95,7 +95,7 @@
 
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
         
     if ([AppSetting haveSetupPassword] == NO ) {
@@ -186,7 +186,7 @@
 #pragma mark - Table View
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60.;
+    return 66.;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -220,7 +220,8 @@
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
-        [cell.textLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:26]];
+        [cell.textLabel setFont:[UIFont fontWithName:@"ArialRoundedMTBold"/*@"Helvetica-Light"*/ size:26]];
+        
         //cell.detailTextLabel.textColor = [UIColor whiteColor];
         cell.textLabel.textColor = [UIColor darkTextColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -449,6 +450,9 @@
     
     NSString *title = [[object valueForKey:@"title"] description];
     cell.textLabel.text = [title uppercaseString];
+    if (cell.textLabel.text.length == 0 ) {
+        cell.textLabel.text = @"Empty";
+    }
     cell.textLabel.textColor = [UIColor skyeBlueColor];
     
 }
