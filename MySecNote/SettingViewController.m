@@ -106,10 +106,10 @@
     
     UILabel *copyrightLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, h - 44., w, 44.)];
     copyrightLabel.backgroundColor = [UIColor clearColor];
-    copyrightLabel.text = @"Design4Apple,2013";
+    copyrightLabel.text = @"@2013 DESIGN4APPLE ";
     copyrightLabel.textAlignment = UITextAlignmentCenter;
     copyrightLabel.textColor = [UIColor whiteColor];
-    copyrightLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14];
+    copyrightLabel.font = [UIFont fontWithName:@"TeluguSangamMN" size:14];
     [self.view addSubview:copyrightLabel];
     
     UITapGestureRecognizer *tapSetting = [[UITapGestureRecognizer alloc] initWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {

@@ -35,7 +35,7 @@
         GCPlaceholderTextView *v = [[GCPlaceholderTextView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 44.)];
         self.noteTextView = v;
         self.noteTextView.backgroundColor = [UIColor whiteColor];
-        [self.noteTextView setFont:[UIFont fontWithName:@"Helvetica-Light" size:20]];
+        [self.noteTextView setFont:[UIFont fontWithName:@"Chalkduster" size:24]];
         [self.noteTextView setTextColor:[UIColor skyeBlueColor]];
         
         self.noteTextView.delegate = self;

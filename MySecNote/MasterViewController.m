@@ -118,12 +118,7 @@
     }];
         
     }
-//    self.navigationController.navigationBarHidden = YES;
-//    UIView *splashView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
-//    splashView.backgroundColor = [UIColor blueNoteColor];
-//    [self.view addSubview:splashView];
 
-    
 }
 
 - (void)tapMe{
